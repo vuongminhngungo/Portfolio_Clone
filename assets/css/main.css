@@ -5,6 +5,35 @@
   box-sizing: border-box;
 }
 
+.dots {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.dots .dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(8, 4, 21, 0.2);
+  padding: 3px;
+}
+.dots .active {
+  border: 1px solid #5d3bee;
+  background-color: #fff;
+}
+.dots .active::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #5d3bee;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -434,6 +463,9 @@ nav.nav .lists .nav-item {
   margin-top: 70px;
   position: relative;
 }
+.designer_media .media-bg {
+  width: 100%;
+}
 .designer_media .play {
   position: absolute;
   top: 50%;
@@ -494,32 +526,6 @@ nav.nav .lists .nav-item {
   color: #51586a;
   font-size: 1.6rem;
   line-height: 29px;
-}
-.designer_tip .dots {
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-.designer_tip .dots .dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: rgba(8, 4, 21, 0.2);
-  padding: 3px;
-}
-.designer_tip .dots .active {
-  border: 1px solid #5d3bee;
-  background-color: #fff;
-}
-.designer_tip .dots .active::after {
-  content: "";
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #5d3bee;
 }
 
 .questions {
@@ -786,7 +792,7 @@ nav.nav .lists .nav-item {
   .hero-content .follow-list {
     margin-top: 24px;
   }
-  .content-img {
+  .hero-content .content-img {
     display: none;
   }
   .clients-heading {
@@ -921,6 +927,150 @@ nav.nav .lists .nav-item {
   }
 }
 /*  Tablet */
-/*  Tablet and Mobile */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  header .inner {
+    flex-direction: row-reverse;
+  }
+  .header-gmail .icon {
+    width: 32px;
+    height: 32px;
+  }
+  .header-gmail .gmail-text {
+    display: none;
+  }
+  .header-gmail .drop-down {
+    display: block;
+  }
+  .header-logo {
+    width: 80px;
+    height: 80px;
+  }
+  header nav.nav {
+    display: none;
+  }
+  .hero-media .media-img {
+    width: 100%;
+  }
+  .hero-media .media-bg {
+    position: absolute;
+    right: -120px;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+  }
+  .hero .hero-content {
+    margin-top: 20px;
+  }
+  .hero-content .hero-heading {
+    max-width: 260px;
+    font-size: 4.2rem;
+    line-height: 50px;
+    letter-spacing: -1.68px;
+  }
+  .hero-content .btn-action {
+    margin-top: 30px;
+  }
+  .hero-content .follow-list {
+    margin-top: 24px;
+  }
+  .hero-content .follow-list .desc {
+    font-size: 1.3rem;
+  }
+  .hero-content .content-img {
+    display: none;
+  }
+  .clients .row {
+    align-items: center;
+  }
+  .clients-heading {
+    text-align: center;
+    margin: 0;
+  }
+  .clients-heading::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 86px;
+    height: 2px;
+    background-color: #5d3bee;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .clients-list {
+    margin-top: 40px;
+  }
+  .specialty .specialty-cards .card {
+    margin-bottom: 24px;
+  }
+  .project .header {
+    gap: 80px;
+  }
+  .project .header .heading {
+    font-size: 3rem;
+    line-height: 40px;
+  }
+  .designer_media .media_bg {
+    display: none;
+  }
+  .designer_media .media_bg-mobile {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .designer_media .play > img {
+    width: 77px;
+    height: 77px;
+  }
+  .designer_media .intro {
+    max-width: 118px;
+    font-size: 1.2rem;
+    height: 44px;
+  }
+  .designer_tip .quote {
+    font-size: 1.8rem;
+  }
+  .atmosphere_cards {
+    margin-top: 70px;
+  }
+  .atmosphere_cards .row {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  .bookme {
+    margin-top: 40px;
+    padding: 50px 0;
+  }
+  .bookme_wrapper {
+    padding: 34px 0;
+  }
+  .bookme_wrapper .img-banner {
+    position: absolute;
+  }
+  .bookme_wrapper .img-banner:nth-of-type(2) {
+    display: none;
+  }
+  .bookme_wrapper .img-banner:nth-of-type(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .bookme_wrapper .img-banner:nth-of-type(4) {
+    display: none;
+  }
+  .footer_inner {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footer_inner .gmail {
+    justify-content: center;
+  }
+  .footer_inner .nav .lists {
+    justify-content: center;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
